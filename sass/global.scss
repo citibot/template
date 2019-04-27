@@ -1,0 +1,18 @@
+@charset 'utf-8';
+
+$citibot-blue: #52C2E4;
+$citibot-sky: #CCE8F4;
+$citibot-dark: #398BA4;
+$red: #F16363;
+
+$grey-dark: $citibot-dark;
+$grey-light: $citibot-sky;
+$primary: $citibot-blue;
+$link: $red;
+
+$body-background-color: $citibot-sky;
+$input-border-color: transparent;
+$input-shadow: none;
+
+@import '../node_modules/bulma/bulma.sass'
+
