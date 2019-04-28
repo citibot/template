@@ -11,19 +11,17 @@
  * to select state from redux
  *
  */
+import { readable } from 'svelte/store'
 import createStore from './bundles'
 
 const reduxstore = createStore({})
 
-function adapter(reduxstore) {
-  return {
-    subscribe(fn) {
-      return reduxstore.subscribe(() => {
-        fn(reduxstore.getState())
-      })
-    }
-  }
-}
+export const store = readable(reduxstore.selectAll(), function (set) {
+   reduxstore.subscribe(() => {
+     set(reduxstore.selectAll())
+   })
+})
 
-export const store = adapter(reduxstore)
-export const reduxBundler = reduxstore
+export const action = name => (...args) => {
+  return reduxstore[name](...args)
+}
