@@ -1,0 +1,70 @@
+<script>
+import Logo from '../components/Logo.html'
+</script>
+
+<section>
+  <header class="navbar is-primary center">
+    <div class="navbar-brand center">
+      <h1 class="title">About</h1>
+    </div>
+  </header>
+  <main class="center">
+    <Logo />
+    <div class="content"> 
+      <h3>Citibot App Template</h3>
+      <h4>Version 1.0.0</h4>
+      <div class="box">
+        <p>This application is built for use with the citibot platform.</p>
+        <p>If you have any questions about how to use this app or need technical support contact support@citibot.io</p>
+        <a class="button center" href="/">Close</a>
+      </div>
+    </div>
+  </main>
+  <footer class="center">
+    <p>All Rights Reserved. &copy; Citibot, LLC 2019</p>
+  </footer>
+</section>
+<style>
+  section {
+    height: 100%;
+    display: grid;
+    grid-template-areas: 
+      "header"
+      "main"
+      "footer";
+
+    grid-template-rows: 72px auto 48px;
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  header > div {
+    height: 100%;
+    
+  }
+  .title {
+    color: white;
+  }
+
+  .center {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+  }
+  main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .box {
+    width: 350px;
+  }
+
+  footer {
+    grid-area: footer
+  }
+
+</style>

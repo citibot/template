@@ -1,11 +1,26 @@
-<section class="section">
+<section class="section center">
   <Logo />
   <h1 class="title">Citibot</h1>
   <h2 class="subtitle">App Template</h2>
-  <div class="content">
+  <div class="box center">
     <p>Use this template to create citibot apps</p>
+    <a class="button is-primary" href="/about">About</a>
   </div>
 </section>
+<style>
+section {
+  height: 100%;
+}
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.button {
+  margin-top: 16px;
+}
+</style>
 <script>
   import Logo from '../components/Logo.html'
 </script>

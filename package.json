@@ -9,6 +9,7 @@
     "rollup-plugin-commonjs": "^9.3.4",
     "rollup-plugin-livereload": "^1.0.0",
     "rollup-plugin-node-resolve": "^4.2.3",
+    "rollup-plugin-replace": "^2.2.0",
     "rollup-plugin-svelte": "^5.0.3",
     "rollup-plugin-terser": "^4.0.4",
     "sirv-cli": "^0.3.1",
@@ -19,12 +20,12 @@
     "now-bulid": "npm run build && npm run css-build",
     "autobuild": "rollup -c -w",
     "dev": "run-p start:dev autobuild",
-    "start": "sirv public",
-    "start:dev": "sirv public --dev",
+    "start": "sirv public -s",
+    "start:dev": "sirv public --dev -s",
     "css-build": "node-sass --omit-source-map-url sass/global.scss public/global.css",
     "css-watch": "npm run css-build -- --watch"
   },
   "dependencies": {
-    "page": "^1.11.4"
+    "redux-bundler": "^23.1.2"
   }
 }

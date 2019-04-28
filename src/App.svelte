@@ -1,16 +1,29 @@
 <script>
-  import router from 'page'
-
+  import { reduxBundler, store } from './store'
+  import navHelper from './lib/nav-helper'
   import Start from './pages/Start.html'
+  
+  const { doUpdateUrl, selectRoute } = reduxBundler 
+  // watch for new redux events
+  // set page to route
+  //
+  // want to add a page to the app
+  // see src/bundles/routes.js
+  //
+  let page = selectRoute()
+  store.subscribe(() => {
+    page = selectRoute()
+  })
 
-  let page = Start
-	export let name;
 </script>
-
+<div on:click={navHelper(doUpdateUrl)}>
+  <svelte:component this={page} />
+</div>
 <style>
-	h1 {
-		color: purple;
-	}
+  :global(body) {
+    height: 100vh;
+  }
+  div {
+    height: 100%;
+  }
 </style>
-
-<h1>Hello {name}!</h1>
