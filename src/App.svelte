@@ -1,9 +1,12 @@
 <script>
-  import { reduxBundler, store } from './store'
+  import { setContext } from 'svelte'
+  import { action, store } from './store'
   import navHelper from './lib/nav-helper'
   import Start from './pages/Start.html'
   
   const { doUpdateUrl, selectRoute } = reduxBundler 
+  setContext('store', store)
+  setContext('action', action)
   // watch for new redux events
   // set page to route
   //
