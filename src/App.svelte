@@ -4,7 +4,6 @@
   import navHelper from './lib/nav-helper'
   import Start from './pages/Start.html'
   
-  const { doUpdateUrl, selectRoute } = reduxBundler 
   setContext('store', store)
   setContext('action', action)
   // watch for new redux events
@@ -13,13 +12,10 @@
   // want to add a page to the app
   // see src/bundles/routes.js
   //
-  let page = selectRoute()
-  store.subscribe(() => {
-    page = selectRoute()
-  })
+  $: page = $store.route
 
 </script>
-<div on:click={navHelper(doUpdateUrl)}>
+<div on:click={navHelper(action('doUpdateUrl'))}>
   <svelte:component this={page} />
 </div>
 <style>
